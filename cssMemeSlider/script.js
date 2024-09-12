@@ -1,10 +1,10 @@
 console.log('Yay')
 
-const images = document.querySelectorAll('#carousel img');
+const images = document.querySelectorAll('#img-cont img');
 const dots =document.querySelector('#dots');
 const desc = document.querySelector('#desc');
 
-let speed = 3000;
+let speed = 1500;
 let index = 0;
 let intervalId;
 
@@ -15,7 +15,7 @@ images.forEach((image, i) => {
     span.addEventListener('click', () => {
         index = i;
         // startInterval();
-        updateContent();
+        setTimeout(() => {updateContent()}, speed);
     });
     dots.appendChild(span);
 })
@@ -44,4 +44,12 @@ function updateContent() {
     dots[index].classList.add('active');
 
     desc.textContent = images[index].dataset.desc;
+    desc.classList.remove('active');
+
+    // вызов "forces reflow" перед добавлением класса обратно
+    // чтобы анимация могла повторяться
+    void desc.offsetWidth;
+
+    //класс 'active', чтобы снова запустить анимацию
+    desc.classList.add('active');
 }
