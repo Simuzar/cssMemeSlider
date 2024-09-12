@@ -50,6 +50,6 @@ function updateContent() {
     // чтобы анимация могла повторяться
     void desc.offsetWidth;
 
-    //класс 'active', чтобы снова запустить анимацию
+    //добавитьб класс 'active', чтобы снова запустить анимацию
     desc.classList.add('active');
 }
