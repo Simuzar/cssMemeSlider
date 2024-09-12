@@ -27,7 +27,6 @@
 
     #carousel {
     max-height: 70%;
-    /* height: 70%; */
     width: 80%;
     display: flex;
     flex-direction: column;
@@ -38,7 +37,6 @@
     #img-cont {
     max-height: 90rem;
     width: 70%;
-    /* height: 90%; */
     margin: 0 auto;
     object-fit:contain;
     background-color: rgba(0, 0, 0, .2);
@@ -51,17 +49,17 @@
     #carousel img {
     display: none;
     max-width: 100%;
-    /* max-height: 90%; */
     height: 30vw;
-    object-fit: cover;
-    /* transform: scale(0.6);  /* Уменьшение изображения до 80% от оригинала */
-    /* transform-origin: center; */ 
+    object-fit: contain;
+    border-radius: 2.5rem;
+    padding: 1.5%;
     }
 
     #carousel img[class='active'] {
     display: flex;
     animation-name: FadeIn;
     animation-duration: 2s;
+ 
     }  
     
     @keyframes FadeIn {
